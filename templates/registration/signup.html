@@ -1,21 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Зарегистрироваться</title>
-</head>
-<body>
-    <div>
+{% extends 'bases/_base.html' %}
+{% block content %}    
+<div>
 
         <h2>Зарегистрироваться</h2>
-        <form action="{% url 'users:register' %}">
+        <form action="{% url 'users:register' %}" method="post">
             {% csrf_token %}
             {{form.as_p}}
             <button type="submit"> Регистрация </button>
         </form>
     </div>
 
-</body>
-</html>
+{% endblock %}
